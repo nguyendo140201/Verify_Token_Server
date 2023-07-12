@@ -6,6 +6,8 @@ var app = express();
 /* GET home page. */
 router.get("/", function (req, res, next) {
   const date = dayjs().format(" YYYY-MM-DDT HH");
+  console.log(process.env.TOKEN);
+  console.log(req.headers.TOKEN);
   if (process.env.TOKEN === req.headers.TOKEN) {
     if (date !== app.get("time")) {
       require("crypto").randomBytes(48, function (err, buffer) {
