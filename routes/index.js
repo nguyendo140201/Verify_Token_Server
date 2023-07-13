@@ -18,7 +18,7 @@ router.get("/", function (req, res, next) {
       res.status(200).json({ token: app.get("token") });
     }
   } else {
-    res.status(401).json({ err: "lost token" });
+    res.status(200).json({ err: "lost token" });
   }
 });
 
